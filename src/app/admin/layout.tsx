@@ -23,7 +23,7 @@ export default function AdminLayout({
   return (
   
       <>
-      <div className="fixed w-full z-50">
+      <div className="fixed w-full">
       <AdminNavbar />
       <Nav>
         <NavLink href="/admin">Dashboard</NavLink>

@@ -6,9 +6,10 @@ import Arrowright from '@/public/arrowright2.png'
 
 
 const images = [
+  '/Component.png',
   '/Component1.png',
   '/Component2.png',
-  '/Component3.png',
+  
 ];
 
 const Carousel = () => {
@@ -23,7 +24,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative col-span-2 bg-gray-300 ">
+    <div className="relative col-span-2">
       <div className="relative h-80 w-full overflow-hidden">
         {images.map((src, index) => (
           <div

@@ -5,14 +5,23 @@ import NewuserNavbar from "./newUser/NewuserNavbar";
 import Navbar from "./newUser/Navbar";
 import Arrowright from "@/public/arrowright.png"
 import Carousel from "./newUser/Carousel";
+import HotSales from "./newUser/Hotsales";
+import Biding from "./newUser/Biding";
+import Discount from "./newUser/Discount";
+import OtherItems from "./newUser/OtherItems";
+import Footer from "./newUser/Footer";
 
 export default function Home() {
+
+ 
+
   return (
   <>
   <NewuserNavbar />
   <Navbar />
-  <div className="bg-[#e2e2e2] p-6 w-screen h-auto">
-  <header className="grid grid-cols-4 gap-4">
+
+  <div className="bg-[#e2e2e2] p-6">
+    <header className="grid grid-cols-4 gap-4">
       <div className="col-span-1 bg-white flex flex-col h-full">
         <h2 className="py-2 px-2 border-b text-3xl text-center">Category</h2>
         <div className="p-4 flex-grow">
@@ -85,7 +94,7 @@ export default function Home() {
         </div>
       </div>
       <div className="col-span-2 flex flex-col h-full">
-        <Carousel className="flex-grow" />
+        <Carousel />
       </div>
       <div className="col-span-1 flex flex-col h-full relative">
         <Image
@@ -102,9 +111,24 @@ export default function Home() {
         </div>
       </div>
     </header>
-
+     
+      <div>  
+          <HotSales  />
+      </div>
+   
+      <div>
+        <Biding />
+      </div>
+      <div>
+        <Discount />
+      </div>
+      <div>
+        <OtherItems />
+      </div>
   </div>
-
+    <div>
+      <Footer />
+    </div>
   
   </>
   );
