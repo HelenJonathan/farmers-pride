@@ -1,4 +1,4 @@
-// import { Nav, NavLink } from "@/components/Nav"
+
 import Image from "next/image";
 import { FaBell, FaGavel, FaUser } from 'react-icons/fa';
 
