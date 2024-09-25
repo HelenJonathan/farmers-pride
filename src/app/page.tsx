@@ -3,7 +3,7 @@
 import Image from "next/image";
 import NewuserNavbar from "./newUser/NewuserNavbar";
 import Navbar from "./newUser/Navbar";
-import Arrowright from "@/public/arrowright.png"
+// import Arrowright from "@/public/arrowright.png"
 import Carousel from "./newUser/Carousel";
 import HotSales from "./newUser/Hotsales";
 import Biding from "./newUser/Biding";
@@ -29,7 +29,7 @@ export default function Home() {
             <p>Grains</p>
             <div className="justify-self-end">
               <Image
-                src={Arrowright}
+                src="/Arrowright.png"
                 alt="arrow"
                 width={20}
                 height={40}
@@ -40,7 +40,7 @@ export default function Home() {
             <p>Fishes</p>
             <div className="justify-self-end">
               <Image
-                src={Arrowright}
+                 src="/Arrowright.png"
                 alt="arrow"
                 width={20}
                 height={40}
@@ -51,7 +51,7 @@ export default function Home() {
             <p>Tubers</p>
             <div className="justify-self-end">
               <Image
-                src={Arrowright}
+                 src="/Arrowright.png"
                 alt="arrow"
                 width={20}
                 height={40}
@@ -62,7 +62,7 @@ export default function Home() {
             <p>Legumes</p>
             <div className="justify-self-end">
               <Image
-                src={Arrowright}
+               src="/Arrowright.png"
                 alt="arrow"
                 width={20}
                 height={40}
@@ -73,7 +73,7 @@ export default function Home() {
             <p>Livestocks</p>
             <div className="justify-self-end">
               <Image
-                src={Arrowright}
+                 src="/Arrowright.png"
                 alt="arrow"
                 width={20}
                 height={40}
@@ -84,7 +84,7 @@ export default function Home() {
             <p>Vegetables</p>
             <div className="justify-self-end">
               <Image
-                src={Arrowright}
+                src="/Arrowright.png"
                 alt="arrow"
                 width={20}
                 height={40}
@@ -96,19 +96,15 @@ export default function Home() {
       <div className="col-span-2 flex flex-col h-full">
         <Carousel />
       </div>
-      <div className="col-span-1 flex flex-col h-full relative">
+      <div className="col-span-1 flex flex-col h-full w-full relative">
         <Image
           src="/Cartimage.png"
           alt="Background"
           layout="fill"
-          objectFit="cover"
-          className="absolute inset-0 z-0"
+          objectFit="contain"
+          className="absolute inset-0 z-0 w-full"
         />
-        <div className="relative z-10 flex-grow flex items-end p-2">
-          <button className="bg-[#538e53] text-white py-2 px-4 rounded">
-            Shop Now
-          </button>
-        </div>
+        
       </div>
     </header>
      

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Tomatoe from "@/public/tomatoes.png"
+
 
 
 function HotSales() {
@@ -10,7 +10,7 @@ function HotSales() {
         <div className="mx-2">
             <div className="relative h-36 w-full">        
               <Image            
-                src={Tomatoe}
+                src="/Tomatoes.png"
                 alt="tomatoes"
                 layout="fill"
                 objectFit="cover"
@@ -23,7 +23,7 @@ function HotSales() {
         <div className="mx-2">
             <div className="relative h-36 w-full">        
               <Image            
-                src={Tomatoe}
+                src="/Tomatoes.png"
                 alt="tomatoes"
                 layout="fill"
                 objectFit="cover"
@@ -37,7 +37,7 @@ function HotSales() {
         <div className="mx-2">
             <div className="relative h-36 w-full">        
               <Image            
-                src={Tomatoe}
+                src="/Tomatoes.png"
                 alt="tomatoes"
                 layout="fill"
                 objectFit="cover"
@@ -50,7 +50,7 @@ function HotSales() {
         <div className="mx-2">
             <div className="relative h-36 w-full">        
               <Image            
-                src={Tomatoe}
+                src="/Tomatoes.png"
                 alt="tomatoes"
                 layout="fill"
                 objectFit="cover"
@@ -63,7 +63,7 @@ function HotSales() {
         <div className="mx-2">
             <div className="relative h-36 w-full">        
               <Image            
-                src={Tomatoe}
+                src="/Tomatoes.png"
                 alt="tomatoes"
                 layout="fill"
                 objectFit="cover"
@@ -76,7 +76,7 @@ function HotSales() {
         <div className="mx-2">
             <div className="relative h-36 w-full">        
               <Image            
-                src={Tomatoe}
+                src="/Tomatoes.png"
                 alt="tomatoes"
                 layout="fill"
                 objectFit="cover"
@@ -89,7 +89,7 @@ function HotSales() {
         <div className="mx-2">
             <div className="relative h-36 w-full">        
               <Image            
-                src={Tomatoe}
+                src="/Tomatoes.png"
                 alt="tomatoes"
                 layout="fill"
                 objectFit="cover"

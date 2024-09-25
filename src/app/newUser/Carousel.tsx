@@ -1,8 +1,6 @@
 // components/Carousel.js
 import { useState } from 'react';
 import Image from 'next/image';
-import Arrowleft from '@/public/arrow.png';
-import Arrowright from '@/public/arrowright2.png'
 
 
 const images = [
@@ -42,7 +40,7 @@ const Carousel = () => {
         className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full shadow-md"
       >
        <Image
-      src={Arrowleft}
+      src="/Arrow.png"
       alt="arrow"
       width={40}
       height={40}
@@ -53,7 +51,7 @@ const Carousel = () => {
         className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full shadow-md"
       >
         <Image
-      src={Arrowright}
+      src="/Arrowright2.png"
       alt="arrow"
       width={40}
       height={40}

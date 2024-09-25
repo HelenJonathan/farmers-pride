@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Banana from "@/public/banana.jpg"
-import Arrow from "@/public/arrowright.png"
 
 
 function Biding() {
@@ -11,7 +9,7 @@ function Biding() {
                 <h1 className="text-3xl my-2 font-bold">Biding</h1>
                 <div className="flex align-middle justify-center">
                     <button className="text-md text-blue-200">See more</button>
-                    
+                    <Image src="/Arrowright.png" alt="arrow" width={10} height={10} className="text-blue-200"/>
                     
                 </div>
                 
@@ -21,7 +19,7 @@ function Biding() {
             <div className="mx-4">
                 <div className="relative h-36 w-full rounded-lg">        
                 <Image            
-                    src={Banana}
+                    src="/Banana.png"
                     alt="banana"
                     layout="fill"
                     objectFit="cover"
@@ -36,7 +34,7 @@ function Biding() {
             <div className="mx-4">
                 <div className="relative h-36 w-full rounded-lg">        
                 <Image            
-                    src={Banana}
+                    src="/Banana.png"
                     alt="banana"
                     layout="fill"
                     objectFit="cover"
@@ -51,7 +49,7 @@ function Biding() {
             <div className="mx-4">
                 <div className="relative h-36 w-full rounded-lg">        
                 <Image            
-                    src={Banana}
+                    src="/Banana.png"
                     alt="banana"
                     layout="fill"
                     objectFit="cover"
@@ -66,7 +64,7 @@ function Biding() {
             <div className="mx-4">
                 <div className="relative h-36 w-full rounded-lg">        
                 <Image            
-                    src={Banana}
+                    src="/Banana.png"
                     alt="banana"
                     layout="fill"
                     objectFit="cover"
@@ -81,7 +79,7 @@ function Biding() {
             <div className="mx-4">
                 <div className="relative h-36 w-full rounded-lg">        
                 <Image            
-                    src={Banana}
+                    src="/Banana.png"
                     alt="banana"
                     layout="fill"
                     objectFit="cover"

@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Tomatoe from "@/public/tomatoes.png"
-import Arrow from "@/public/arrowright.png"
 
 
 
@@ -19,7 +17,7 @@ function Discount() {
             <div className="mx-4">
                 <div className="relative h-36 w-full rounded-lg">        
                   <Image            
-                      src={Tomatoe}
+                      src="/Tomatoes.png"
                       alt="banana"
                       layout="fill"
                       objectFit="cover"
@@ -34,7 +32,7 @@ function Discount() {
             <div className="mx-4">
                 <div className="relative h-36 w-full rounded-lg">        
                   <Image            
-                      src={Tomatoe}
+                      src="/Tomatoes.png"
                       alt="banana"
                       layout="fill"
                       objectFit="cover"
@@ -49,7 +47,7 @@ function Discount() {
             <div className="mx-4">
                 <div className="relative h-36 w-full rounded-lg">        
                   <Image            
-                      src={Tomatoe}
+                     src="/Tomatoes.png"
                       alt="banana"
                       layout="fill"
                       objectFit="cover"
@@ -64,7 +62,7 @@ function Discount() {
             <div className="mx-4">
                 <div className="relative h-36 w-full rounded-lg">        
                   <Image            
-                      src={Tomatoe}
+                      src="/Tomatoes.png"
                       alt="banana"
                       layout="fill"
                       objectFit="cover"
@@ -79,7 +77,7 @@ function Discount() {
             <div className="mx-4">
                 <div className="relative h-36 w-full rounded-lg">        
                   <Image            
-                      src={Tomatoe}
+                     src="/Tomatoes.png"
                       alt="banana"
                       layout="fill"
                       objectFit="cover"

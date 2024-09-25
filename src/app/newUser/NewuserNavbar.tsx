@@ -2,9 +2,6 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import Logo from '@/public/newuserlogo.png';
-import Notification from '@/public/notification.png';
-import Cart from '@/public/shoppingcart.png';
 import { FaSearch } from 'react-icons/fa';
 import SignUpModal from './SignUpModal';
 import ConfirmationCodeModal from './ConfirmationCodeModal';
@@ -49,7 +46,7 @@ export default function NewuserNavbar() {
         <div className="flex w-40 bg-[#f1f1f1]">
           {/* Logo */}
           <div className="ml-6">
-            <Image src={Logo} alt="Logo" width={95} height={60} />
+            <Image src="/Newuserlogo.png" alt="Logo" width="95" height="60" />
           </div>
         </div>
         <div className="flex items-center space-x-8">
@@ -66,12 +63,12 @@ export default function NewuserNavbar() {
           </div>
           {/* Bidding Icon */}
           <button className="relative">
-            <Image src={Notification} alt="Notification" width={40} height={60} />
+            <Image src="/Notification.png" alt="Notification" width="40" height="60" />
             <span className="absolute top-0 right-0 bg-red-500 rounded-full h-2 w-2"></span>
           </button>
           {/* Notification Icon */}
           <button className="relative">
-            <Image src={Cart} alt="Cart" width={40} height={60} />
+            <Image src="/Shoppingcart.png" alt="Cart" width="40" height="60" />
             <span className="absolute top-0 right-0 bg-red-500 rounded-full h-2 w-2"></span>
           </button>
           <div className="flex items-center space-x-2 pr-6">

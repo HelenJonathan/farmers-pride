@@ -19,7 +19,7 @@ function OtherItems() {
             <div className="mx-4">
                 <div className="relative h-36 w-full rounded-lg">        
                   <Image            
-                      src={Tomatoe}
+                      src="/Tomatoes.png"
                       alt="banana"
                       layout="fill"
                       objectFit="cover"
@@ -34,8 +34,8 @@ function OtherItems() {
               <div className="mx-4">
                 <div className="relative h-36 w-full rounded-lg">        
                   <Image            
-                      src={Tomatoe}
-                      alt="banana"
+                      src="/Tomatoes.png"
+                      alt=""
                       layout="fill"
                       objectFit="cover"
                       className="rounded-lg"
@@ -49,8 +49,8 @@ function OtherItems() {
             <div className="mx-4">
                 <div className="relative h-36 w-full rounded-lg">        
                   <Image            
-                      src={Tomatoe}
-                      alt="banana"
+                     src="/Tomatoes.png"
+                      alt="tomatoes"
                       layout="fill"
                       objectFit="cover"
                       className="rounded-lg"
@@ -64,8 +64,8 @@ function OtherItems() {
             <div className="mx-4">
                 <div className="relative h-36 w-full rounded-lg">        
                   <Image            
-                      src={Tomatoe}
-                      alt="banana"
+                      src="/Tomatoes.png"
+                      alt="tomatoes"
                       layout="fill"
                       objectFit="cover"
                       className="rounded-lg"
@@ -79,8 +79,8 @@ function OtherItems() {
             <div className="mx-4">
                 <div className="relative h-36 w-full rounded-lg">        
                   <Image            
-                      src={Tomatoe}
-                      alt="banana"
+                      src="/Tomatoes.png"
+                      alt="tomatoes"
                       layout="fill"
                       objectFit="cover"
                       className="rounded-lg"
