@@ -1,6 +1,5 @@
 // import { Nav, NavLink } from "@/components/Nav"
 import Image from "next/image";
-import Logo from "@/public/logo.png"
 import { FaBell, FaGavel, FaUser } from 'react-icons/fa';
 
 const AdminNavbar = () => {
@@ -15,10 +14,10 @@ const AdminNavbar = () => {
         {/* Logo */}
         <div>  
           <Image 
-            src={Logo} 
+            src="/Adminlogo.png" 
             alt="Logo" 
-            width={70} 
-            height={60} 
+            width="70"
+            height="60" 
             className="mr-2"
           />
         </div>
