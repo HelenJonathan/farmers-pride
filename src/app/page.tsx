@@ -3,7 +3,6 @@
 import Image from "next/image";
 import NewuserNavbar from "./newUser/NewuserNavbar";
 import Navbar from "./newUser/Navbar";
-// import Arrowright from "@/public/arrowright.png"
 import Carousel from "./newUser/Carousel";
 import HotSales from "./newUser/Hotsales";
 import Biding from "./newUser/Biding";
