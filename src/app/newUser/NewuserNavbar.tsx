@@ -72,11 +72,11 @@ export default function NewuserNavbar() {
             <span className="absolute top-0 right-0 bg-red-500 rounded-full h-2 w-2"></span>
           </button>
           <div className="flex items-center space-x-2 pr-6">
-            <button onClick={() => setShowLogin(true)} className="w-24 py-2 border-2 border-[#538e53] border-solid rounded-full bg-[#e2e2e2] text-[#538e53]">
+            <button onClick={() => window.location.href = '/signin'} className="w-24 py-2 border-2 border-[#538e53] border-solid rounded-full bg-[#e2e2e2] text-[#538e53]">
               Login
             </button>
-            <button onClick={() => setShowSignUp(true)} className="w-24 py-2 border-2 rounded-full bg-[#538e53] text-white">
-              Sign up
+            <button onClick={() => window.location.href = '/signup'} className="w-24 py-2 border-2 rounded-full bg-[#538e53] text-white">
+                Sign up
             </button>
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function NewuserNavbar() {
         confirmationCode={confirmationCode}
       />
       <ResendCodeModal show={showResend} onClose={handleCloseResend} onResendCode={handleResendCode} />
-      <LoginModal show={showLogin} onClose={handleLoginClose} onSignUp={handleShowSignUp} />
+      {/* <LoginModal show={showLogin} onClose={handleLoginClose} onSignUp={handleShowSignUp} /> */}
     </>
   );
 }
