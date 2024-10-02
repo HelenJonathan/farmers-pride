@@ -8,45 +8,41 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Signup = () => {
-  const [signUpData, setSignUpData] = useState({
+const SignIn = () => {
+  const [signInData, setSignInData] = useState({
     email: "",
     password: "",
-    fullName: "",
   });
-
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const signUpChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSignUpData({...signUpData, [event.target.name]: event.target.value})
+  const signInChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSignInData({...signInData, [event.target.name]: event.target.value})
   }
 
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
       // Make POST request to the API
-      setIsLoading(true)
-      const response = await axios.post('/api/signup', signUpData);
+      setIsLoading(true);
+      const res = await axios.post('/api/signin', signInData);
 
       // Handle API response
-      if (response.status === 201) {
-        // Success toast message
-        toast.success(response.data.message || "User registered successfully!");
-        // Optionally clear the form
-        setSignUpData({
+      if (res.status === 200) {
+        localStorage.setItem('userToken', res.data.token)
+        localStorage.setItem('user', res.data.user)
+        toast.success(res.data.message);
+        setSignInData({
           email: "",
           password: "",
-          fullName: "",
         });
-        window.location.href = "/signin"
+        window.location.href = "/"
       }
     } catch (error) {
         toast.error("An error occurred during registration. Please try again.");
     } finally {
-      setIsLoading(false);
+      setIsLoading(false)
     }
   };
 
@@ -63,23 +59,10 @@ const Signup = () => {
           </a>
         </div>
 
-        <div className="sign_up_form w-3/4">
+        <div className="sign_in_form w-3/4">
           <p className="text-xl my-4 text-center">Sign up</p>
 
-          <form className="w-full flex flex-col gap-2" onSubmit={handleSubmit}>
-            {/* Full name field */}
-            <div className="flex flex-col gap-2 w-full">
-              <label>Full name</label>
-              <input
-                type="text"
-                placeholder="Ciroma Chukwuma Adekunle"
-                className="bg-transparent p-2 border-2 border-gray-300 text-xs outline-none"
-                value={signUpData.fullName}
-                onChange={signUpChange}
-                required
-              />
-            </div>
-
+          <form className="w-full flex flex-col gap-2" onSubmit={handleSignIn}>
             {/* Email field */}
             <div className="w-full flex flex-col gap-2">
               <label>Email</label>
@@ -87,8 +70,8 @@ const Signup = () => {
                 type="email"
                 placeholder="example@gmail.com"
                 className="bg-transparent p-2 border-2 border-gray-300 text-xs outline-none"
-                value={signUpData.email}
-                onChange={signUpChange}
+                value={signInData.email}
+                onChange={signInChange}
                 required
               />
             </div>
@@ -103,8 +86,8 @@ const Signup = () => {
                   type={showPassword ? "text" : "password"}
                   placeholder="xxxxxxxxxxxxxxxxxx"
                   className="w-full bg-transparent p-2 text-xs outline-none"
-                  value={signUpData.password}
-                  onChange={signUpChange}
+                  value={signInData.password}
+                  onChange={signInChange}
                   required
                 />
                 <div onClick={() => setShowPassword(!showPassword)} className="cursor-pointer">
@@ -113,13 +96,20 @@ const Signup = () => {
               </div>
             </div>
 
+            <div className="forgot-password text-right text-xs">
+                <a href="/forgotpassword" className="text-red-700">
+                  Forgot Password?
+                </a>
+  
+            </div>
+
             <button className="bg-green-700 text-white p-2 w-full text-center my-3">
-              {isLoading ? 'Signing Up...' : 'Sign up'}</button>
+            {isLoading ? 'Signing In...' : 'Sign up<'}</button>
           </form>
 
           <div className="flex items-center gap-2 my-3">
             <hr className="flex-grow border-t-1 border-gray-400" />
-            <p className="whitespace-nowrap text-xs">Or register with</p>
+            <p className="whitespace-nowrap text-xs">Or login with</p>
             <hr className="flex-grow border-t-1 border-gray-400" />
           </div>
 
@@ -129,7 +119,7 @@ const Signup = () => {
           </div>
 
           <p className="text-center text-xs my-6">
-            Already have an account? <a href="/signin" className="text-green-600">Login</a>
+            Don't have an account? <a href="/signup" className="text-green-600">Sign Up</a>
           </p>
         </div>
       </div>
@@ -139,4 +129,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignIn;

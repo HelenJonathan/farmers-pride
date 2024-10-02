@@ -1,17 +1,14 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 model Product {
-  id                     String                 @id @default(uuid())
+  id                     String                 @id @default(auto()) @map("_id") @db.ObjectId // Use ObjectId native type
   name                   String
   priceInCents           Int
   filePath               String
@@ -25,9 +22,10 @@ model Product {
 }
 
 model User {
-  id        String   @id @default(uuid())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId // Use ObjectId native type
   email     String   @unique
   fullName  String
+  userType  String
   createdAt DateTime @default(now())
   password  String
   updatedAt DateTime @updatedAt
@@ -35,7 +33,7 @@ model User {
 }
 
 model Order {
-  id               String   @id @default(uuid())
+  id               String   @id @default(auto()) @map("_id") @db.ObjectId // Use ObjectId native type
   pricePaidInCents Int
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
@@ -47,11 +45,9 @@ model Order {
 }
 
 model DownloadVerification {
-  id        String   @id @default(uuid())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId // Use ObjectId native type
   expiresAt DateTime
   createdAt DateTime @default(now())
   productId String
   product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
 }
-
-
