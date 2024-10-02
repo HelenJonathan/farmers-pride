@@ -40,7 +40,7 @@ const SignIn = () => {
         window.location.href = "/"
       }
     } catch (error) {
-        toast.error("An error occurred during registration. Please try again.");
+        toast.error("An error occurred during Logginin. Please try again.");
     } finally {
       setIsLoading(false)
     }
@@ -68,6 +68,7 @@ const SignIn = () => {
               <label>Email</label>
               <input
                 type="email"
+                name="email"
                 placeholder="example@gmail.com"
                 className="bg-transparent p-2 border-2 border-gray-300 text-xs outline-none"
                 value={signInData.email}
@@ -84,6 +85,7 @@ const SignIn = () => {
               <div className="toggle_password flex w-full items-center border-2 border-gray-300 pr-3">
                 <input
                   type={showPassword ? "text" : "password"}
+                  name="password"
                   placeholder="xxxxxxxxxxxxxxxxxx"
                   className="w-full bg-transparent p-2 text-xs outline-none"
                   value={signInData.password}
@@ -104,7 +106,7 @@ const SignIn = () => {
             </div>
 
             <button className="bg-green-700 text-white p-2 w-full text-center my-3">
-            {isLoading ? 'Signing In...' : 'Sign up<'}</button>
+            {isLoading ? 'Signing In...' : 'Sign in'}</button>
           </form>
 
           <div className="flex items-center gap-2 my-3">

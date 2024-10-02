@@ -72,6 +72,7 @@ const Signup = () => {
               <label>Full name</label>
               <input
                 type="text"
+                name="fullName"
                 placeholder="Ciroma Chukwuma Adekunle"
                 className="bg-transparent p-2 border-2 border-gray-300 text-xs outline-none"
                 value={signUpData.fullName}
@@ -85,6 +86,7 @@ const Signup = () => {
               <label>Email</label>
               <input
                 type="email"
+                name="email"
                 placeholder="example@gmail.com"
                 className="bg-transparent p-2 border-2 border-gray-300 text-xs outline-none"
                 value={signUpData.email}
@@ -101,6 +103,7 @@ const Signup = () => {
               <div className="toggle_password flex w-full items-center border-2 border-gray-300 pr-3">
                 <input
                   type={showPassword ? "text" : "password"}
+                  name="password"
                   placeholder="xxxxxxxxxxxxxxxxxx"
                   className="w-full bg-transparent p-2 text-xs outline-none"
                   value={signUpData.password}

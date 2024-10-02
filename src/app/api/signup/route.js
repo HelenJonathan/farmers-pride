@@ -4,7 +4,7 @@ import prisma from '../../../lib/prisma';
 
 export async function POST(req) {
   try {
-    const { fullName, email, password, userType } = await req.body;
+    const { fullName, email, password, userType } = await req.json();
 
     // Validate input
     if (!fullName || !email || !password) {
