@@ -1,0 +1,124 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 20px;
+  padding: 0px 20px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  padding: 0px 20px;
+}
+
+.subtitle {
+  color: var(--btn);
+}
+
+.chatsection {
+  display: flex;
+  gap: 20px;
+  background-color: var(--btn);
+  border-radius: 5px;
+}
+
+.imgCont {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageText {
+  padding-top: 50px;
+}
+
+.imageText h2 {
+  font-size: 2rem;
+}
+
+.imageContainer {
+  width: 500px;
+  height: 400px;
+  position: relative;
+  
+}
+
+.image {
+  /* object-fit: contain; */
+  width: 500px;
+}
+
+.formContainer {
+  flex: 1;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-right: 30px;
+}
+
+.liveChat {
+  align-items: center;
+  padding-top: 10px;
+  font-size: 24px;
+  color: linear-gradient(180deg, #16FF16 0%, #a3a3a3 100%);
+margin: auto;
+}
+
+.form textarea {
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #F9F9F9;
+  
+  color: var(--text);
+
+}
+
+.liveChatContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center; /* Align buttons vertically */
+  margin-top: 20px; /* Add spacing from other sections */
+  flex-wrap: wrap; /* Handle overflow for smaller screens */
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.liveContainInner {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.liveChatContainer p {
+  color:#538E53;
+}
+.hotLine {
+  display: flex;
+  flex-direction: column;
+}
+.hotLine p {
+  color:#538E53;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}

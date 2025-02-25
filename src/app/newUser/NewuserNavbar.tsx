@@ -3,22 +3,22 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { FaSearch } from 'react-icons/fa';
-import SignUpModal from './SignUpModal';
+// import SignUpModal from './SignUpModal';
 import ConfirmationCodeModal from './ConfirmationCodeModal';
 import ResendCodeModal from './ResendCodeModal';
-import LoginModal from './LoginModal';
+
 
 export default function NewuserNavbar() {
-  const [showLogin, setShowLogin] = useState(false);
+ 
   const [showSignUp, setShowSignUp] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [showResend, setShowResend] = useState(false);
   const [confirmationCode, setConfirmationCode] = useState('');
 
-  const handleLoginClose = () => setShowLogin(false);
+ 
   const handleSignUpClose = () => setShowSignUp(false);
   const handleShowSignUp = () => {
-    setShowLogin(false);
+  
     setShowSignUp(true);
   };
   const handleShowConfirmation = () => {
@@ -81,7 +81,7 @@ export default function NewuserNavbar() {
           </div>
         </div>
       </div>
-      <SignUpModal show={showSignUp} onClose={handleSignUpClose} onShowConfirmation={handleShowConfirmation} />
+      {/* <SignUpModal show={showSignUp} onClose={handleSignUpClose} onShowConfirmation={handleShowConfirmation} /> */}
       <ConfirmationCodeModal
         show={showConfirmation}
         onClose={handleCloseConfirmation}

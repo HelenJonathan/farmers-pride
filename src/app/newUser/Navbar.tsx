@@ -12,8 +12,7 @@ const Navbar = () => {
                 src="/Home.png"
                 alt="home" 
                 width="20" 
-                height="40" 
-                
+                height="40"                 
               />
             <label className="text-sm text-[#538e53] mt-1 ml-1">Home</label>
         </Link>

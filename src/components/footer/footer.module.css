@@ -1,0 +1,104 @@
+.container {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px 20px;
+  color: white;
+  background-color: #538e53;
+  width: 100%;
+}
+
+.subscribeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.inputContainer {
+  display: flex;
+  /* gap: 10px; */
+}
+
+.input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  width: 250px;
+  font-size: 14px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #CCE5CC;
+  color: #2b2b2b;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.button:hover {
+  background-color: #e69500;
+}
+
+.container1 {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.container1 h6 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.container1 p {
+  font-size: 12px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.container1 p:hover {
+  text-decoration: underline;
+}
+
+.paymentMethods,
+.socialIcons {
+  display: flex;
+  gap: 5px;
+}
+
+.paymentMethods > div,
+.socialIcons > div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2px;
+}
+
+@media (max-width: 768px) {
+  .container1 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .inputContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input {
+    width: 100%;
+  }
+}

@@ -1,0 +1,187 @@
+.container {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  padding: 20px 20px;
+}
+
+.textContainer,
+.missionTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+.subtitle {
+  color: var(--btn);
+}
+
+.title {
+  font-size: 54px;
+}
+
+.desc {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: start;
+  align-items: start; /* Align buttons vertically */
+  margin-top: 20px; /* Add spacing from other sections */
+  flex-wrap: wrap; /* Handle overflow for smaller screens */
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.buttontrans {
+  width: 264px;
+  padding: 10px;
+  border: 5px #538E53;
+  color: #538E53;
+  border-radius: 4px;
+}
+
+.buttoncolor {
+  width: 264px;
+  padding: 10px;
+  border-radius: 4px;
+  border: transparent;
+  background-color: #538E53;
+  color: #ddd;
+}
+
+
+.button:hover {
+  background-color: #4a7c4a;
+}
+
+/* About Image Section - Flex Column */
+.aboutImgContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Full width */
+  margin: 0; /* Remove any margin */
+  padding: 0; /* Remove padding */
+}
+
+.img {
+  object-fit: cover; /* Ensures the image fills the container */
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+.missionContainer {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding: 0px 20px;
+  background-color: white;
+}
+
+.missionImgContainer{
+  flex: 1;
+}
+.missionTextContainer {
+  flex: 3;
+}
+
+.missionImgContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.missionText {
+  text-align: start;
+}
+
+
+
+.teamContainer {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding: 0px 20px;
+}
+
+.faqContainer {
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: left;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2d2d2d;
+  margin-bottom: 20px;
+}
+
+.table {
+  font-size: 1.5rem;
+}
+
+.faqTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.faqTable th, .faqTable td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.faqTable th {
+  
+  color: #808080;
+  font-size: 0.7rem;
+}
+
+.faqTable td {
+  font-size: 1rem;
+  color: #555;
+}
+
+.faqTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+.faqTable td,
+.faqTable th {
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+    .aboutImgContainer {
+    width: 100%; /* Ensure full width on small screens */
+  }
+
+  .img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+
+  .missionContainer, .teamContainer {
+    flex-direction: column; /* Stack content vertically */
+    gap: 20px;
+    text-align: center; /* Center-align for better readability */
+  }
+
+  .buttonContainer {
+    flex-direction: column; /* Stack buttons */
+    gap: 10px;
+  }
+}

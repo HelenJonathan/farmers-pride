@@ -1,0 +1,121 @@
+/* Carousel.module.css */
+.carouselContainer {
+  background-color: #538e53;
+  color: white;
+  overflow: hidden; /* Hide overflow to create a seamless loop */
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+.slidesWrapper {
+  display: flex;
+  width: max-content; /* Allow the slides to overflow horizontally */
+  justify-content: space-evenly; /* Evenly space slides */
+  animation: slide 20s linear infinite; /* Animation for infinite sliding */
+  min-height: 100px;
+  text-align: center;
+  align-items: center;
+}
+
+.slide {
+  display: flex;
+ 
+  align-items: center;
+  text-align: center;
+  gap: 10px; /* Increased gap between elements */
+  flex-shrink: 0; /* Prevent slides from shrinking */
+  width: 25%; /* Adjust width as needed */
+  /* padding: 20px; Increased padding for better spacing */
+  transition: transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.slide:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.slideImage {
+  width: 60px;
+  height: 40px;
+  object-fit: contain; /* Ensure the image scales properly */
+}
+
+.slideText {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align text */
+  text-align: center;
+}
+
+.boldText {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.heading {
+  font-size: 1.5rem; /* Bigger heading for emphasis */
+  font-weight: bold;
+}
+
+.vertical {
+  border-left: 4px solid white;
+  height: 100px;
+  position: absolute;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-40%); /* Move the slides by 50% of their total width */
+  }
+}
+
+/* Content Container Styles */
+.container1 {
+  display: flex;
+  gap: 20px;
+  padding: 40px 0;
+  justify-content: space-between;
+}
+
+.marketaccess, .madeessay, .transporterfuture {
+  padding: 15px;
+  border-radius: 15px;
+  width: 32%; /* Adjust width for content balance */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+.marketaccess {
+  background-color: #e7ede4;
+}
+
+.madeessay {
+  background-color: #e8eaf1;
+}
+
+.transporterfuture {
+  background-color: #f4efe3;
+}
+
+.marketaccess:hover, .madeessay:hover, .transporterfuture:hover {
+  transform: translateY(-5px); /* Hover lift effect */
+}
+
+.market {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.h5 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2d2d2d;
+}
+
+.p {
+  font-size: 1rem;
+  color: #555;
+}
