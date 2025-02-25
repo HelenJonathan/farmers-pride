@@ -7,6 +7,8 @@ import { LuEye } from "react-icons/lu";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from "next/navigation";
+
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/Navbar";
 
@@ -19,6 +21,7 @@ const Signup = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   const signUpChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSignUpData({ ...signUpData, [event.target.name]: event.target.value });
@@ -42,10 +45,12 @@ const Signup = () => {
           password: "",
           fullName: "",
         });
-        window.location.href = "/signin";
+        router.push(
+          `/verify-user?email=${encodeURIComponent(signUpData.email)}`
+        );
       }
-    } catch (error) {
-      toast.error("An error occurred during registration. Please try again.");
+    } catch (error: any) {
+      toast.error(error?.message);
     } finally {
       setIsLoading(false);
     }

@@ -2,7 +2,9 @@
   display: flex;
   gap: 40px;
   flex-direction: column;
-  padding: 20px 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .textContainer,
@@ -15,109 +17,108 @@
 
 .subtitle {
   color: var(--btn);
+  font-size: 2rem;
 }
 
 .title {
-  font-size: 54px;
+  font-size: 2.5rem;
 }
 
 .desc {
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: 300;
+  line-height: 1.6;
 }
 
 .buttonContainer {
   display: flex;
   gap: 20px;
-  justify-content: start;
-  align-items: start; /* Align buttons vertically */
-  margin-top: 20px; /* Add spacing from other sections */
-  flex-wrap: wrap; /* Handle overflow for smaller screens */
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  flex-wrap: wrap;
   width: 100%;
-  margin-bottom: 30px;
 }
 
 .buttontrans {
   width: 264px;
-  padding: 10px;
-  border: 5px #538E53;
+  padding: 15px;
+  border: 2px solid #538E53;
   color: #538E53;
   border-radius: 4px;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .buttoncolor {
   width: 264px;
-  padding: 10px;
+  padding: 15px;
   border-radius: 4px;
-  border: transparent;
+  border: none;
   background-color: #538E53;
-  color: #ddd;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
+.buttontrans:hover {
+  background-color: rgba(83, 142, 83, 0.1);
+}
 
-.button:hover {
+.buttoncolor:hover {
   background-color: #4a7c4a;
 }
 
-/* About Image Section - Flex Column */
+/* About Image Section */
 .aboutImgContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%; /* Full width */
-  margin: 0; /* Remove any margin */
-  padding: 0; /* Remove padding */
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .img {
-  object-fit: cover; /* Ensures the image fills the container */
+  object-fit: cover;
   width: 100%;
-  height: auto; /* Maintain aspect ratio */
+  height: auto;
+  display: block;
 }
 
-
-.missionContainer {
+.missionContainer, .teamContainer {
   display: flex;
   align-items: center;
   gap: 50px;
   justify-content: space-between;
-  margin-top: 50px;
-  padding: 0px 20px;
+  margin: 50px 0;
+  padding: 0 20px;
   background-color: white;
 }
 
-.missionImgContainer{
+.missionImgContainer {
   flex: 1;
-}
-.missionTextContainer {
-  flex: 3;
+  max-width: 300px;
 }
 
-.missionImgContainer {
-  display: flex;
-  justify-content: center;
+.missionTextContainer {
+  flex: 3;
+  text-align: left;
 }
 
 .missionText {
-  text-align: start;
-}
-
-
-
-.teamContainer {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  justify-content: space-between;
-  margin-top: 50px;
-  padding: 0px 20px;
+  text-align: left;
+  line-height: 1.6;
 }
 
 .faqContainer {
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 30px 0;
+  overflow-x: auto; /* Allow horizontal scroll for tables on small screens */
 }
 
 .title {
@@ -136,6 +137,7 @@
   width: 100%;
   border-collapse: collapse;
   text-align: left;
+  min-width: 600px; /* Ensure table doesn't get too small */
 }
 
 .faqTable th, .faqTable td {
@@ -144,9 +146,9 @@
 }
 
 .faqTable th {
-  
   color: #808080;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .faqTable td {
@@ -158,30 +160,90 @@
   background-color: #f1f1f1;
 }
 
-.faqTable td,
-.faqTable th {
-  text-align: left;
+/* Enhanced responsive styles */
+@media (max-width: 992px) {
+  .missionContainer, .teamContainer {
+    gap: 30px;
+  }
+  
+  .missionImgContainer {
+    max-width: 250px;
+  }
+  
+  .subtitle {
+    font-size: 1.8rem;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
 }
 
 @media (max-width: 768px) {
-    .aboutImgContainer {
-    width: 100%; /* Ensure full width on small screens */
+  .aboutImgContainer {
+    width: 100%;
   }
 
   .img {
-    object-fit: cover;
     width: 100%;
     height: auto;
   }
 
   .missionContainer, .teamContainer {
-    flex-direction: column; /* Stack content vertically */
+    flex-direction: column;
     gap: 20px;
-    text-align: center; /* Center-align for better readability */
+    text-align: center;
+  }
+  
+  .missionTextContainer {
+    text-align: center;
+  }
+  
+  .missionText {
+    text-align: center;
   }
 
   .buttonContainer {
-    flex-direction: column; /* Stack buttons */
-    gap: 10px;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .buttontrans, .buttoncolor {
+    width: 100%;
+    max-width: 264px;
+  }
+  
+  .missionImgContainer {
+    max-width: 200px;
   }
 }
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+    gap: 20px;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .desc {
+    font-size: 1rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .faqContainer {
+    padding: 1rem;
+  }
+  
+  .buttontrans, .buttoncolor {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+}
+
+

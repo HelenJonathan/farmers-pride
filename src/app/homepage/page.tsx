@@ -88,6 +88,7 @@ const Homepage = () => {
               alt={section.title}
               fill
               className={styles.heroImg}
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
           <div className={styles.textContainer}>

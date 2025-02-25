@@ -32,14 +32,17 @@ const SignIn = () => {
 
       // Handle API response
       if (res.status === 200) {
-        localStorage.setItem("userToken", res.data.token);
-        localStorage.setItem("user", res.data.user);
+        const { token, user } = res.data.data;
+
+        localStorage.setItem("userToken", token);
+        localStorage.setItem("user", JSON.stringify(user));
+
         toast.success(res.data.message);
         setSignInData({
           email: "",
           password: "",
         });
-        window.location.href = "/";
+        window.location.href = "/welcomepage";
       }
     } catch (error) {
       toast.error("An error occurred during Logginin. Please try again.");
@@ -78,7 +81,7 @@ const SignIn = () => {
           </div>
 
           <div className="sign_in_form w-3/4">
-            <p className="text-xl my-4 text-center">Sign In</p>
+            <p className="text-xl my-4 text-center">Sign up</p>
 
             <form
               className="w-full flex flex-col gap-2"

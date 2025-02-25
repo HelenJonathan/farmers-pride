@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <NewuserNavbar />
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div className="bg-[#e2e2e2] p-6">
         <header className="grid grid-cols-4 gap-4">

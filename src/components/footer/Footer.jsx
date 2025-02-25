@@ -3,103 +3,123 @@ import styles from "./footer.module.css";
 
 const Footer = () => {
   return (
-    <div className={styles.container}>
+    <footer className={styles.container}>
+      {/* Newsletter Subscription */}
       <div className={styles.subscribeContainer}>
         <p className={styles.text}>Subscribe to our newsletter</p>
         <div className={styles.inputContainer}>
           <input
-            type="text"
+            type="email" // Changed to email for better mobile keyboard
             placeholder="Enter your email"
             className={styles.input}
+            aria-label="Email for newsletter"
           />
           <button className={styles.button}>Subscribe</button>
         </div>
       </div>
 
+      {/* Footer Links and Info */}
       <div className={styles.container1}>
-        <div>
-          <h6>Need Our Support?</h6>
-          <p>Help center</p>
-          <p>FAQ</p>
-          <p>How to purchase an item</p>
-          <p>How to sell on Agritech</p>
+        {/* Support Section */}
+        <div className={styles.footerSection}>
+          <h6 className={styles.sectionTitle}>Need Our Support?</h6>
+          <p className={styles.footerLink}>Help center</p>
+          <p className={styles.footerLink}>FAQ</p>
+          <p className={styles.footerLink}>How to purchase an item</p>
+          <p className={styles.footerLink}>How to sell on Agritech</p>
         </div>
-        <div>
-          <h6>About Agrictech</h6>
-          <p>Privacy policy</p>
-          <p>Our location</p>
-          <p>Cookies</p>
+
+        {/* About Section */}
+        <div className={styles.footerSection}>
+          <h6 className={styles.sectionTitle}>About Agrictech</h6>
+          <p className={styles.footerLink}>Privacy policy</p>
+          <p className={styles.footerLink}>Our location</p>
+          <p className={styles.footerLink}>Cookies</p>
         </div>
-        <div>
-          <h6>Payment methods</h6>
+
+        {/* Payment Methods Section */}
+        <div className={styles.footerSection}>
+          <h6 className={styles.sectionTitle}>Payment methods</h6>
           <div className={styles.paymentMethods}>
-            <div>
-              <div>
-                <Image alt="icon" src="/house2.png" width="20" height="20" />
+            <div className={styles.paymentMethod}>
+              <div className={styles.iconWrapper}>
+                <Image
+                  alt="Deposit icon"
+                  src="/house2.png"
+                  width={20}
+                  height={20}
+                />
               </div>
               <p>Deposit</p>
             </div>
-            <div>
-              <div>
-                <Image alt="icon" src="/cardpos.png" width="20" height="20" />
+            <div className={styles.paymentMethod}>
+              <div className={styles.iconWrapper}>
+                <Image
+                  alt="Card icon"
+                  src="/cardpos.png"
+                  width={20}
+                  height={20}
+                />
               </div>
               <p>Card</p>
             </div>
-            <div>
-              <div>
+            <div className={styles.paymentMethod}>
+              <div className={styles.iconWrapper}>
                 <Image
-                  alt="icon"
+                  alt="Transfer icon"
                   src="/moneychange.png"
-                  width="20"
-                  height="20"
+                  width={20}
+                  height={20}
                 />
               </div>
               <p>Transfer</p>
             </div>
-            <div>
-              <div>
+            <div className={styles.paymentMethod}>
+              <div className={styles.iconWrapper}>
                 <Image
-                  alt="icon"
+                  alt="Cheque icon"
                   src="/receiptedit.png"
-                  width="20"
-                  height="20"
+                  width={20}
+                  height={20}
                 />
               </div>
               <p>Cheque</p>
             </div>
           </div>
         </div>
-        <div>
-          <h6>Follow us on:</h6>
+
+        {/* Social Media Section */}
+        <div className={styles.footerSection}>
+          <h6 className={styles.sectionTitle}>Follow us on:</h6>
           <div className={styles.socialIcons}>
-            <div>
+            <a href="#" className={styles.socialIcon} aria-label="Facebook">
               <Image
-                alt="FBicon"
+                alt="Facebook"
                 src="/facebookframe215.png"
-                width="45"
-                height="45"
+                width={40}
+                height={40}
               />
-            </div>
-            <div>
+            </a>
+            <a href="#" className={styles.socialIcon} aria-label="Twitter">
               <Image
-                alt="Twittericon"
+                alt="Twitter"
                 src="/Twitter-jpeg0.png"
-                width="40"
-                height="40"
+                width={35}
+                height={35}
               />
-            </div>
-            <div>
+            </a>
+            <a href="#" className={styles.socialIcon} aria-label="Instagram">
               <Image
-                alt="icon"
+                alt="Instagram"
                 src="/Instagram-jpeg0.png"
-                width="40"
-                height="40"
+                width={35}
+                height={35}
               />
-            </div>
+            </a>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
