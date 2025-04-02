@@ -1,38 +1,47 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import axios from "axios";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useRouter } from "next/navigation";
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/Navbar";
 
 const EmailConfirmation = () => {
   const [code, setCode] = useState<string[]>(["", "", "", "", "", ""]);
+  const [email, setEmail] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const searchParams = useSearchParams();
-  const email = searchParams.get("email");
   const router = useRouter();
+  const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
+
+  // Retrieve email from search params safely
+  useEffect(() => {
+    setEmail(searchParams.get("email"));
+  }, [searchParams]);
 
   const handleChange = (value: string, index: number) => {
-    if (!/^\d*$/.test(value)) return; // Only allow numeric input
+    if (!/^\d*$/.test(value)) return; // Only allow numbers
     const newCode = [...code];
     newCode[index] = value;
     setCode(newCode);
 
-    // Focus next input automatically
+    // Auto-focus next input field
     if (value && index < code.length - 1) {
-      const nextInput = document.getElementById(`code-${index + 1}`);
-      if (nextInput) nextInput.focus();
+      inputRefs.current[index + 1]?.focus();
     }
   };
 
   const handleSubmit = useCallback(async () => {
+    if (!email) {
+      toast.error("Email is missing!");
+      return;
+    }
+
     try {
-      const verificationToken = code.join(""); // Joining the 6 digits to form the token
+      const verificationToken = code.join("");
       const response = await axios.post("/api/verify-email", {
         verificationToken,
         email,
@@ -47,17 +56,17 @@ const EmailConfirmation = () => {
         );
       }
     } catch (error: any) {
-      const errorMessage =
+      toast.error(
         error.response?.data?.error ||
-        "An error occurred. Please try again later.";
-      toast.error(errorMessage);
+          "An error occurred. Please try again later."
+      );
     }
   }, [code, email, router]);
 
+  // Auto-submit when 6 digits are entered
   useEffect(() => {
-    // Check if all 6 fields are filled
     if (code.every((val) => val !== "") && code.length === 6) {
-      handleSubmit(); // Since handleSubmit is memoized, it will not cause unnecessary re-renders
+      setTimeout(() => handleSubmit(), 100); // Delay execution slightly
     }
   }, [code, handleSubmit]);
 
@@ -70,6 +79,7 @@ const EmailConfirmation = () => {
     try {
       setIsLoading(true);
       const response = await axios.post("/api/resend-token", { email });
+
       if (response.status === 200) {
         toast.success("Verification token resent successfully!");
       } else {
@@ -89,7 +99,7 @@ const EmailConfirmation = () => {
         <div className="w-1/2 lg:flex md:flex hidden">
           <Image
             src="/confirm.jpg"
-            alt=""
+            alt="Confirmation"
             width={500}
             height={500}
             quality={100}
@@ -110,7 +120,9 @@ const EmailConfirmation = () => {
               {code.map((digit, index) => (
                 <input
                   key={index}
-                  id={`code-${index}`}
+                  ref={(el) => {
+                    if (el) inputRefs.current[index] = el;
+                  }}
                   type="text"
                   maxLength={1}
                   value={digit}
@@ -119,13 +131,6 @@ const EmailConfirmation = () => {
                 />
               ))}
             </div>
-
-            {/* <button
-            onClick={handleSubmit}
-            className="mb-4 bg-green-500 text-white px-4 py-2 rounded"
-          >
-            Verify
-          </button> */}
 
             <button>
               I didn’t receive any code.{" "}
@@ -138,7 +143,6 @@ const EmailConfirmation = () => {
             </button>
           </div>
         </div>
-        {/* Toast container for notifications */}
         <ToastContainer />
       </div>
       <Footer />
